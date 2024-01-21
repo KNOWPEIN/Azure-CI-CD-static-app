@@ -17,8 +17,6 @@ stages:
     displayName: Build Job
     pool:
       vmImage: ubuntu-latest
-    variables:
-    - group: Azure-Static-Web-Apps-jolly-river-042e91b10-variable-group
     steps:
     - checkout: self
       submodules: true
@@ -49,8 +47,6 @@ stages:
     displayName: Deploy to Staging Job
     pool:
       vmImage: ubuntu-latest
-    variables:
-    - group: Azure-Static-Web-Apps-jolly-river-042e91b10-variable-group
     steps:
     - checkout: self
       submodules: true
@@ -61,5 +57,3 @@ stages:
         api_location: "" # Api source code path - optional
         output_location: "dist" # Built app content directory - optional
         deployment_environment: 'staging' # Specify the deployment environment as staging
-
-
